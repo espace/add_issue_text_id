@@ -1,9 +1,9 @@
 # Include hook code here
 require 'redmine'
-require 'dispatcher'
+#require 'dispatcher'
 require_dependency 'issue_text_id_hook'
 
-Dispatcher.to_prepare do
+Rails.configuration.to_prepare do
   require_dependency 'issue'
   require 'issue_patcher'
   Issue.send(:include, IssuePatcher)
