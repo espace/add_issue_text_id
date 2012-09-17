@@ -1,4 +1,6 @@
 require_dependency 'issue'
+require 'application_helper'
+
 module IssuePatcher
   def self.included(base)
     base.class_eval do
@@ -7,3 +9,10 @@ module IssuePatcher
     end
   end
 end
+
+
+# now we should include this module in ApplicationHelper module
+unless ApplicationHelper.included_modules.include? BoardsWatchers::Patches::ApplicationHelperPatch
+    ApplicationHelper.send(:include, IssuePatcher )
+end
+
