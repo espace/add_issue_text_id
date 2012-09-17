@@ -12,7 +12,7 @@ end
 
 
 # now we should include this module in ApplicationHelper module
-unless ApplicationHelper.included_modules.include? BoardsWatchers::Patches::ApplicationHelperPatch
+unless ApplicationHelper.included_modules.include? IssuePatcher
     ApplicationHelper.send(:include, IssuePatcher )
 end
 
