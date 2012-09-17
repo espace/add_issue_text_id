@@ -17,5 +17,6 @@ Redmine::Plugin.register :add_issue_text_id do
   author 'Basayel Said'
   description 'As a TL, when writing a story, can add attribute of original story ID (example A4)'
   version '0.0.1'
+
 end
 
