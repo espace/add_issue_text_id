@@ -1,17 +1,20 @@
-<div id="p_issue_text_id" style="display:none;float: right; margin-right: 550pt;"><%= form.text_field :text_id, :size =>10 %></div>
+<div id="p_issue_text_id" style="display:none;float: right; margin-right: 350pt;">
+  <%= label_tag "issue[text_id]", l(:field_text_label) %>
+  <%= text_field_tag "issue[text_id]", nil, :size => 10 %>
+</div>
 <script>
-  var story_id="<%=has_story_tracker?(@project)%>"
+  var story_id="<%=Issue.has_story_tracker?(@project)%>"
 	function show_story_id(){
-		 if ($('issue_tracker_id').value==story_id){
-        Element.insert( $('issue_descr_fields').children[0].children[1],{'after':$('p_issue_text_id')});  
-        Element.show($('p_issue_text_id'));
+		 if ($('#issue_tracker_id').val() == story_id){
+        $($('#all_attributes').children()[1]).append($('#p_issue_text_id'));
+        $('#p_issue_text_id').show();
       }else{
-        Element.hide($('p_issue_text_id'));
+        $('#p_issue_text_id').hide();
       }
 	};
-  document.observe('dom:loaded', function() {
+  $(document).ready( function(){
 		show_story_id();
-    Event.observe('issue_tracker_id', 'change', function(e){      
+    $('#issue_tracker_id').change( function(e){      
       show_story_id();
     });
   });
