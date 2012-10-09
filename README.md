@@ -16,5 +16,8 @@ Compatible with redmine 2.1 and Rails 3.
     rake redmine:plugins:migrate
   ```
 
+##License
+Add_issue_text_id is provided under the MIT License.
+
 ##Credits
-Add_issue_text_id is a redmine plugin by eSpace  http://www.espace.com.eg/.
+Add_issue_text_id is a redmine plugin developed by eSpace  http://www.espace.com.eg/.
