@@ -26,7 +26,7 @@ end
 Redmine::Plugin.register :add_issue_text_id do
   name 'Add Issue Friendly Text ID'
   author 'Basayel Said'
-  description 'As a TL, when writing a story, can add attribute of original story ID (example A4)'
+  description 'As a team member with add issue permission, when writing a story, can add attribute of original story ID (example A4)'
   version '1.0.0'
 end
 
